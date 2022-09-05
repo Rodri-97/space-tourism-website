@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const AppContainer = styled.div`
-  height: 100vh;
-  color: white;
+  min-height: 100vh;
+  background-image: url(${(props) => props.currentBackground});
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 `;
