@@ -13,17 +13,17 @@ import getBackground from './helpers/getBackground';
 const App = () => {
   const pathname = useLocation().pathname;
   const screenWidth = useWindowDimensions().width;
-  const [currentBackground, setCurrentBackground] = useState(
+  const [background, setBackground] = useState(
     getBackground(pathname, screenWidth)
   );
 
   useEffect(() => {
     const newBackground = getBackground(pathname, screenWidth);
-    setCurrentBackground(newBackground);
-  }, [setCurrentBackground, pathname, screenWidth]);
+    setBackground(newBackground);
+  }, [setBackground, pathname, screenWidth]);
 
   return (
-    <AppContainer currentBackground={currentBackground}>
+    <AppContainer background={background}>
       <GlobalStyles />
       <header>
         <StyledNavbar />
