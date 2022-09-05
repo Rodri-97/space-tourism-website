@@ -1,10 +1,11 @@
 import { AppContainer } from './AppContainer.styles';
 import { GlobalStyles } from './Global.styles';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { StyledHome } from './routes/Home/Home.styles';
 import { StyledDestination } from './routes/Destination/Destination.styles';
 import { StyledCrew } from './routes/Crew/Crew.styles';
 import { StyledTechnology } from './routes/Technology/Technology.styles';
+import { StyledNavbar } from './Navbar.styles';
 
 const App = () => (
   <AppContainer>
@@ -16,12 +17,7 @@ const App = () => (
         <Route path='/crew' element={<StyledCrew />} />
         <Route path='/technology' element={<StyledTechnology />} />
       </Routes>
-      <nav>
-        <Link to='/'>Home</Link>
-        <Link to='/destination'>Destination</Link>
-        <Link to='/crew'>Crew</Link>
-        <Link to='/technology'>Technology</Link>
-      </nav>
+      <StyledNavbar />
     </BrowserRouter>
   </AppContainer>
 );
