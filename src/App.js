@@ -1,11 +1,11 @@
-import { AppContainer } from './AppContainer.styles';
+import { StyledApp } from './App.styles';
 import { GlobalStyles } from './Global.styles';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { StyledHome } from './routes/Home/Home.styles';
-import { StyledDestination } from './routes/Destination/Destination.styles';
-import { StyledCrew } from './routes/Crew/Crew.styles';
-import { StyledTechnology } from './routes/Technology/Technology.styles';
-import { StyledHeader } from './Header/Header.styles';
+import Home from './routes/Home/Home';
+import Destination from './routes/Destination/Destination';
+import Crew from './routes/Crew/Crew';
+import Technology from './routes/Technology/Technology';
+import Header from './Header/Header';
 import { useState, useEffect } from 'react';
 import useWindowDimensions from './helpers/useWindowDimension';
 import getBackground from './helpers/getBackground';
@@ -23,16 +23,16 @@ const App = () => {
   }, [setBackground, pathname, screenWidth]);
 
   return (
-    <AppContainer background={background}>
+    <StyledApp background={background}>
       <GlobalStyles />
-      <StyledHeader />
+      <Header />
       <Routes>
-        <Route path='/' element={<StyledHome />} />
-        <Route path='/destination' element={<StyledDestination />} />
-        <Route path='/crew' element={<StyledCrew />} />
-        <Route path='/technology' element={<StyledTechnology />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/destination' element={<Destination />} />
+        <Route path='/crew' element={<Crew />} />
+        <Route path='/technology' element={<Technology />} />
       </Routes>
-    </AppContainer>
+    </StyledApp>
   );
 };
 

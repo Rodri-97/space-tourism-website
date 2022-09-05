@@ -1,10 +1,11 @@
-import { StyledNavbar } from './Navbar/Navbar.styles';
+import { StyledHeader } from './Header.styles';
+import Navbar from './Navbar/Navbar';
 
-const Header = ({ className }) => {
+const Header = () => {
   return (
-    <header className={className}>
-      <StyledNavbar />
-    </header>
+    <StyledHeader>
+      <Navbar />
+    </StyledHeader>
   );
 };
 

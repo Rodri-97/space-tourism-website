@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import Destination from './Destination';
 
-export const StyledDestination = styled(Destination)`
+export const StyledDestination = styled.div`
   background-color: violet;
 `;

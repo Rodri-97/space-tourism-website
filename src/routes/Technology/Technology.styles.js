@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import Technology from './Technology';
 
-export const StyledTechnology = styled(Technology)`
+export const StyledTechnology = styled.div`
   background-color: green;
 `;

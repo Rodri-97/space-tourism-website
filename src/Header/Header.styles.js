@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import Header from './Header';
 
-export const StyledHeader = styled(Header)`
+export const StyledHeader = styled.header`
   border: 3px solid red;
 `;
