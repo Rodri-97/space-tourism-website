@@ -5,7 +5,7 @@ import { StyledHome } from './routes/Home/Home.styles';
 import { StyledDestination } from './routes/Destination/Destination.styles';
 import { StyledCrew } from './routes/Crew/Crew.styles';
 import { StyledTechnology } from './routes/Technology/Technology.styles';
-import { StyledNavbar } from './Navbar/Navbar.styles';
+import { StyledHeader } from './Header/Header.styles';
 import { useState, useEffect } from 'react';
 import useWindowDimensions from './helpers/useWindowDimension';
 import getBackground from './helpers/getBackground';
@@ -25,9 +25,7 @@ const App = () => {
   return (
     <AppContainer background={background}>
       <GlobalStyles />
-      <header>
-        <StyledNavbar />
-      </header>
+      <StyledHeader />
       <Routes>
         <Route path='/' element={<StyledHome />} />
         <Route path='/destination' element={<StyledDestination />} />
