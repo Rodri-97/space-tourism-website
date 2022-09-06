@@ -1,26 +1,59 @@
-import { StyledNavbar, StyledHamburger } from './Navbar.styles';
-import { Link } from 'react-router-dom';
+import {
+  NavbarContainer,
+  StyledNavbar,
+  StyledHamburger,
+  StyledMobileNavbar,
+  StyledCloseIcon,
+  StyledLink,
+} from './Navbar.styles';
 import useWindowDimensions from '../../helpers/useWindowDimension';
 import { minimalTabletWidth } from '../../helpers/screenSizes';
+import { useState } from 'react';
 
 const Navbar = () => {
   const screenWidth = useWindowDimensions().width;
+  const [showMobileNavbar, setShowMobileNavbar] = useState(false);
+  const toggleMobileNavbar = () => setShowMobileNavbar(!showMobileNavbar);
+
+  const links = [
+    { path: '/', text: 'Home' },
+    { path: '/destination', text: 'Destination' },
+    { path: '/crew', text: 'Crew' },
+    { path: '/technology', text: 'Technology' },
+  ];
+
+  const linkComponents = links.map((link, index) => {
+    return (
+      <StyledLink to={link.path} key={link.path}>
+        <span>0{index}</span> {link.text}
+      </StyledLink>
+    );
+  });
 
   if (screenWidth < minimalTabletWidth) {
+    if (showMobileNavbar) {
+      return (
+        <NavbarContainer>
+          <StyledMobileNavbar>
+            {linkComponents}
+            <StyledCloseIcon onClick={() => toggleMobileNavbar()} />
+          </StyledMobileNavbar>
+        </NavbarContainer>
+      );
+    }
     return (
-      <StyledNavbar>
-        <StyledHamburger />
-      </StyledNavbar>
+      <NavbarContainer>
+        <StyledNavbar>
+          <StyledHamburger onClick={() => toggleMobileNavbar()} />
+        </StyledNavbar>
+      </NavbarContainer>
     );
   }
 
   return (
-    <StyledNavbar>
-      <Link to='/'>Home</Link>
-      <Link to='/destination'>Destination</Link>
-      <Link to='/crew'>Crew</Link>
-      <Link to='/technology'>Technology</Link>
-    </StyledNavbar>
+    <NavbarContainer>
+      <StyledNavbar>{linkComponents}</StyledNavbar>
+    </NavbarContainer>
   );
 };
 
