@@ -10,17 +10,29 @@ import { Link } from 'react-router-dom';
 export const NavbarContainer = styled.div`
   display: flex;
   align-items: center;
-
-  nav {
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.04);
-  }
 `;
 
 export const StyledNavbar = styled.nav`
   display: flex;
-  align-items: center;
-  height: 100%;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.04);
+
+  @media screen and (max-width: ${minimalTabletWidth}px) {
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 100;
+    padding-top: ${(props) => props.headerheight}px;
+  }
+
+  @media screen and (min-width: ${minimalTabletWidth}px) {
+    align-items: center;
+    height: 100%;
+  }
 
   @media screen and (min-width: ${minimalDesktopWidth}px) {
     padding: 0 100px 0 60px;
@@ -29,19 +41,6 @@ export const StyledNavbar = styled.nav`
 
 export const StyledHamburger = styled(HamburgerIcon)`
   cursor: pointer;
-`;
-
-export const StyledMobileNavbar = styled.nav`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  min-width: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  position: absolute;
-  z-index: 100;
-  padding-top: ${(props) => props.headerheight}px;
 `;
 
 export const StyledCloseIcon = styled(CloseIcon)`

@@ -2,7 +2,6 @@ import {
   NavbarContainer,
   StyledNavbar,
   StyledHamburger,
-  StyledMobileNavbar,
   StyledCloseIcon,
   StyledLink,
 } from './Navbar.styles';
@@ -40,13 +39,13 @@ const Navbar = ({ headerheight }) => {
     if (showMobileNavbar) {
       return (
         <NavbarContainer>
-          <StyledMobileNavbar headerheight={headerheight}>
+          <StyledNavbar headerheight={headerheight}>
             {linkComponents}
             <StyledCloseIcon
               onClick={() => toggleMobileNavbar()}
               headerheight={headerheight}
             />
-          </StyledMobileNavbar>
+          </StyledNavbar>
         </NavbarContainer>
       );
     }
@@ -59,7 +58,7 @@ const Navbar = ({ headerheight }) => {
 
   return (
     <NavbarContainer>
-      <StyledNavbar>{linkComponents}</StyledNavbar>
+      <StyledNavbar headerheight={headerheight}>{linkComponents}</StyledNavbar>
     </NavbarContainer>
   );
 };
