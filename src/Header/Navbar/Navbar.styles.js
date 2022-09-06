@@ -40,8 +40,7 @@ export const StyledMobileNavbar = styled.nav`
   bottom: 0;
   position: absolute;
   z-index: 100;
-
-  padding-top: 85px;
+  padding-top: ${(props) => props.headerheight}px;
 
   border: 3px solid orange;
 `;
@@ -50,6 +49,7 @@ export const StyledCloseIcon = styled(CloseIcon)`
   cursor: pointer;
   right: 0;
   position: absolute;
+  margin-top: ${(props) => props.headerheight / 1.5}px;
 `;
 
 export const StyledLink = styled(Link)`

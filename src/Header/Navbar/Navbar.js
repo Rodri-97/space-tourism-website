@@ -10,7 +10,7 @@ import useWindowDimensions from '../../helpers/useWindowDimension';
 import { minimalTabletWidth } from '../../helpers/screenSizes';
 import { useState } from 'react';
 
-const Navbar = () => {
+const Navbar = ({ headerheight }) => {
   const screenWidth = useWindowDimensions().width;
   const [showMobileNavbar, setShowMobileNavbar] = useState(false);
   const toggleMobileNavbar = () => setShowMobileNavbar(!showMobileNavbar);
@@ -34,9 +34,12 @@ const Navbar = () => {
     if (showMobileNavbar) {
       return (
         <NavbarContainer>
-          <StyledMobileNavbar>
+          <StyledMobileNavbar headerheight={headerheight}>
             {linkComponents}
-            <StyledCloseIcon onClick={() => toggleMobileNavbar()} />
+            <StyledCloseIcon
+              onClick={() => toggleMobileNavbar()}
+              headerheight={headerheight}
+            />
           </StyledMobileNavbar>
         </NavbarContainer>
       );
