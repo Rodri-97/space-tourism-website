@@ -24,7 +24,13 @@ const Navbar = ({ headerheight }) => {
 
   const linkComponents = links.map((link, index) => {
     return (
-      <StyledLink to={link.path} key={link.path}>
+      <StyledLink
+        to={link.path}
+        key={link.path}
+        onClick={() =>
+          screenWidth < minimalTabletWidth ? toggleMobileNavbar() : null
+        }
+      >
         <span>0{index}</span> {link.text}
       </StyledLink>
     );
@@ -46,9 +52,7 @@ const Navbar = ({ headerheight }) => {
     }
     return (
       <NavbarContainer>
-        <StyledNavbar>
-          <StyledHamburger onClick={() => toggleMobileNavbar()} />
-        </StyledNavbar>
+        <StyledHamburger onClick={() => toggleMobileNavbar()} />
       </NavbarContainer>
     );
   }
