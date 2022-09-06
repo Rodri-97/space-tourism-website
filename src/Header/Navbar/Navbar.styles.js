@@ -57,16 +57,17 @@ export const StyledLink = styled(Link)`
   justify-content: center;
   align-items: center;
   border: 2px solid transparent;
-  margin: 10px;
-  padding: 20px;
   font-size: 20px;
-  border-radius: 20px;
 
   span {
     display: none;
   }
 
   @media screen and (max-width: ${minimalTabletWidth}px) {
+    border-radius: 20px;
+    margin: 10px;
+    padding: 20px;
+
     &:hover {
       background: white;
       color: black;
@@ -75,9 +76,7 @@ export const StyledLink = styled(Link)`
 
   @media screen and (min-width: ${minimalTabletWidth}px) {
     height: 100%;
-    padding: 0;
     margin: 20px;
-    border-radius: 0;
 
     &:hover {
       border-bottom-color: white;
