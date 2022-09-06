@@ -1,6 +1,5 @@
-import { StyledNavbar } from './Navbar.styles';
+import { StyledNavbar, StyledHamburger } from './Navbar.styles';
 import { Link } from 'react-router-dom';
-import { StyledHamburger } from './Navbar.styles';
 import useWindowDimensions from '../../helpers/useWindowDimension';
 import { minimalTabletWidth } from '../../helpers/screenSizes';
 
