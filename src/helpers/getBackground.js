@@ -14,6 +14,8 @@ import technologyMobile from '../assets/technology/background-technology-mobile.
 import technologyTablet from '../assets/technology/background-technology-tablet.jpg';
 import technologyDesktop from '../assets/technology/background-technology-desktop.jpg';
 
+import { minimalDesktopWidth, minimalTabletWidth } from './screenSizes';
+
 const homeBackgrounds = [homeDesktop, homeTablet, homeMobile];
 const destinationBackgrounds = [
   destinationDesktop,
@@ -33,8 +35,8 @@ const getBackground = (pathname, screenWidth) => {
   if (pathname === '/destination') backgrounds = destinationBackgrounds;
   if (pathname === '/crew') backgrounds = crewBackgrounds;
   if (pathname === '/technology') backgrounds = technologyBackgrounds;
-  if (screenWidth > 1200) return backgrounds[0];
-  if (screenWidth > 600) return backgrounds[1];
+  if (screenWidth > minimalDesktopWidth) return backgrounds[0];
+  if (screenWidth > minimalTabletWidth) return backgrounds[1];
   return backgrounds[2];
 };
 

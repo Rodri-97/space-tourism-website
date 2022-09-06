@@ -11,7 +11,8 @@ import useWindowDimensions from './helpers/useWindowDimension';
 import getBackground from './helpers/getBackground';
 
 const App = () => {
-  const pathname = useLocation().pathname;
+  //const pathname = useLocation().pathname;
+  const { pathname } = useLocation();
   const screenWidth = useWindowDimensions().width;
   const [background, setBackground] = useState(
     getBackground(pathname, screenWidth)
