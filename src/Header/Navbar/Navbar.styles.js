@@ -14,16 +14,17 @@ export const NavbarContainer = styled.div`
 
 export const StyledNavbar = styled.nav`
   display: flex;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
   background: rgba(255, 255, 255, 0.04);
 
   @media screen and (max-width: ${minimalTabletWidth}px) {
     flex-direction: column;
-    min-height: 100vh;
-    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
     top: 0;
     right: 0;
     bottom: 0;
+    left: 0;
     position: absolute;
     z-index: 100;
     padding-top: ${(props) => props.headerheight}px;
@@ -56,7 +57,7 @@ export const StyledLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid transparent;
+  border: 3px solid transparent;
   font-size: 20px;
 
   span {
