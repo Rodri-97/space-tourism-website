@@ -6,7 +6,7 @@ import {
   StyledLink,
 } from './Navbar.styles';
 import useWindowDimensions from '../../helpers/useWindowDimension';
-import { minimalTabletWidth } from '../../helpers/screenSizes';
+import { minimalTabletWidth } from '../../helpers/styleData';
 import { useState } from 'react';
 
 const Navbar = ({ headerheight }) => {

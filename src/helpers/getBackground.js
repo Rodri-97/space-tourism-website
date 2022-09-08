@@ -14,7 +14,7 @@ import technologyMobile from '../assets/technology/background-technology-mobile.
 import technologyTablet from '../assets/technology/background-technology-tablet.jpg';
 import technologyDesktop from '../assets/technology/background-technology-desktop.jpg';
 
-import { minimalDesktopWidth, minimalTabletWidth } from './screenSizes';
+import { minimalDesktopWidth, minimalTabletWidth } from './styleData';
 
 const homeBackgrounds = [homeDesktop, homeTablet, homeMobile];
 const destinationBackgrounds = [

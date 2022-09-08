@@ -4,7 +4,7 @@ import { ReactComponent as CloseIcon } from '../../assets/shared/icon-close.svg'
 import {
   minimalDesktopWidth,
   minimalTabletWidth,
-} from '../../helpers/screenSizes';
+} from '../../helpers/styleData';
 import { Link } from 'react-router-dom';
 
 export const NavbarContainer = styled.div`
