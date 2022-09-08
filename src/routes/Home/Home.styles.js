@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import {
   minimalTabletWidth,
   minimalDesktopWidth,
-  marginLeftDesktop,
 } from '../../helpers/styleData';
 
 export const StyledHome = styled.main`
@@ -69,7 +68,6 @@ export const StyledText = styled.section`
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
-    margin-left: ${marginLeftDesktop}px;
 
     > * {
       text-align: left;
