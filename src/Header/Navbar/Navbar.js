@@ -15,10 +15,10 @@ const Navbar = ({ headerheight }) => {
   const toggleMobileNavbar = () => setShowMobileNavbar(!showMobileNavbar);
 
   const links = [
-    { path: '/', text: 'Home' },
-    { path: '/destination', text: 'Destination' },
-    { path: '/crew', text: 'Crew' },
-    { path: '/technology', text: 'Technology' },
+    { path: '/', text: 'HOME' },
+    { path: '/destination', text: 'DESTINATION' },
+    { path: '/crew', text: 'CREW' },
+    { path: '/technology', text: 'TECHNOLOGY' },
   ];
 
   const linkComponents = links.map((link, index) => {

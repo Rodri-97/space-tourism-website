@@ -19,7 +19,7 @@ export const StyledNavbar = styled.nav`
 
   @media screen and (max-width: ${minimalTabletWidth}px) {
     flex-direction: column;
-    min-height: 100%;
+    min-height: 100vh;
     width: 100%;
     top: 0;
     right: 0;
@@ -58,7 +58,6 @@ export const StyledLink = styled(Link)`
   justify-content: center;
   align-items: center;
   border: 3px solid transparent;
-  font-size: 20px;
 
   span {
     display: none;
@@ -68,6 +67,7 @@ export const StyledLink = styled(Link)`
     border-radius: 20px;
     margin: 10px;
     padding: 20px;
+    font-size: 20px;
 
     &:hover {
       background: white;
@@ -78,6 +78,7 @@ export const StyledLink = styled(Link)`
   @media screen and (min-width: ${minimalTabletWidth}px) {
     height: 100%;
     margin: 20px;
+    font-size: 15px;
 
     &:hover {
       border-bottom-color: white;
