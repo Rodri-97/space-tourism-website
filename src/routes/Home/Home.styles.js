@@ -5,7 +5,6 @@ import {
 } from '../../helpers/styleData';
 
 export const StyledHome = styled.main`
-  min-height: 100vh;
   display: grid;
 
   @media screen and (max-width: ${minimalTabletWidth}px) {

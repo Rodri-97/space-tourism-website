@@ -1,10 +1,4 @@
-import {
-  NavbarContainer,
-  StyledNavbar,
-  StyledHamburger,
-  StyledCloseIcon,
-  StyledLink,
-} from './Navbar.styles';
+import { NavbarContainer, StyledNavbar, StyledLink } from './Navbar.styles';
 import useWindowDimensions from '../../helpers/useWindowDimension';
 import { minimalTabletWidth } from '../../helpers/styleData';
 import { useState } from 'react';
@@ -41,17 +35,21 @@ const Navbar = ({ headerheight }) => {
         <NavbarContainer>
           <StyledNavbar headerheight={headerheight}>
             {linkComponents}
-            <StyledCloseIcon
+            <div
+              className='icon close-icon'
               onClick={() => toggleMobileNavbar()}
               headerheight={headerheight}
-            />
+            ></div>
           </StyledNavbar>
         </NavbarContainer>
       );
     }
     return (
       <NavbarContainer>
-        <StyledHamburger onClick={() => toggleMobileNavbar()} />
+        <div
+          className='icon hamburger-icon'
+          onClick={() => toggleMobileNavbar()}
+        ></div>
       </NavbarContainer>
     );
   }

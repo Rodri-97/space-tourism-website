@@ -5,8 +5,10 @@ export const StyledHeader = styled.header`
   justify-content: space-between;
   height: ${(props) => props.headerheight}px;
 
-  svg {
-    top: 20px;
-    margin: 20px;
+  .logo {
+    background: url('./assets/shared/logo.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px;
   }
 `;

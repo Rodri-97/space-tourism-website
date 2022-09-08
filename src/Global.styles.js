@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+const iconMargin = 20;
+
 export const GlobalStyles = createGlobalStyle`
     * {
         margin: 0;
@@ -10,5 +12,13 @@ export const GlobalStyles = createGlobalStyle`
 
     html, body {
         min-height: 100%;
+    }
+
+    .logo {
+        margin-left: ${iconMargin}px;
+    }
+
+    .hamburger-icon, .close-icon {
+        margin-right: ${iconMargin}px;
     }
 `;

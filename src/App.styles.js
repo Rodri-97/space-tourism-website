@@ -7,6 +7,10 @@ export const StyledApp = styled.div`
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
+  main {
+    min-height: 100vh;
+  }
+
   @media screen and (min-width: ${minimalDesktopWidth}px) {
     main {
       padding-left: 100px;

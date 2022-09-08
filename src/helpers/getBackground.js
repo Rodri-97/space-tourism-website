@@ -1,43 +1,13 @@
-import homeMobile from '../assets/home/background-home-mobile.jpg';
-import homeTablet from '../assets/home/background-home-tablet.jpg';
-import homeDesktop from '../assets/home/background-home-desktop.jpg';
-
-import destinationMobile from '../assets/destination/background-destination-mobile.jpg';
-import destinationTablet from '../assets/destination/background-destination-tablet.jpg';
-import destinationDesktop from '../assets/destination/background-destination-desktop.jpg';
-
-import crewMobile from '../assets/crew/background-crew-mobile.jpg';
-import crewTablet from '../assets/crew/background-crew-tablet.jpg';
-import crewDesktop from '../assets/crew/background-crew-desktop.jpg';
-
-import technologyMobile from '../assets/technology/background-technology-mobile.jpg';
-import technologyTablet from '../assets/technology/background-technology-tablet.jpg';
-import technologyDesktop from '../assets/technology/background-technology-desktop.jpg';
-
 import { minimalDesktopWidth, minimalTabletWidth } from './styleData';
 
-const homeBackgrounds = [homeDesktop, homeTablet, homeMobile];
-const destinationBackgrounds = [
-  destinationDesktop,
-  destinationTablet,
-  destinationMobile,
-];
-const crewBackgrounds = [crewDesktop, crewTablet, crewMobile];
-const technologyBackgrounds = [
-  technologyDesktop,
-  technologyTablet,
-  technologyMobile,
-];
-
-const getBackground = (pathname, screenWidth) => {
-  let backgrounds;
-  if (pathname === '/') backgrounds = homeBackgrounds;
-  if (pathname === '/destination') backgrounds = destinationBackgrounds;
-  if (pathname === '/crew') backgrounds = crewBackgrounds;
-  if (pathname === '/technology') backgrounds = technologyBackgrounds;
-  if (screenWidth > minimalDesktopWidth) return backgrounds[0];
-  if (screenWidth > minimalTabletWidth) return backgrounds[1];
-  return backgrounds[2];
+const getDevice = (screenWidth) => {
+  if (screenWidth > minimalDesktopWidth) return 'desktop';
+  if (screenWidth > minimalTabletWidth) return 'tablet';
+  return 'mobile';
 };
 
-export default getBackground;
+export const getBackground = (pathname, screenWidth) => {
+  const page = pathname === '' ? 'home' : pathname;
+  const device = getDevice(screenWidth);
+  return `./assets/${page}/background-${page}-${device}.jpg`;
+};

@@ -8,10 +8,10 @@ import Technology from './routes/Technology/Technology';
 import Header from './Header/Header';
 import { useState, useEffect } from 'react';
 import useWindowDimensions from './helpers/useWindowDimension';
-import getBackground from './helpers/getBackground';
+import { getBackground } from './helpers/getBackground';
 
 const App = () => {
-  const { pathname } = useLocation();
+  const pathname = useLocation().pathname.split('/')[1];
   const screenWidth = useWindowDimensions().width;
   const [background, setBackground] = useState(
     getBackground(pathname, screenWidth)

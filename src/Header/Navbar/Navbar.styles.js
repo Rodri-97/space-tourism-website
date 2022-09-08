@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import { ReactComponent as HamburgerIcon } from '../../assets/shared/icon-hamburger.svg';
-import { ReactComponent as CloseIcon } from '../../assets/shared/icon-close.svg';
 import {
   minimalDesktopWidth,
   minimalTabletWidth,
@@ -10,6 +8,18 @@ import { Link } from 'react-router-dom';
 export const NavbarContainer = styled.div`
   display: flex;
   align-items: center;
+
+  .icon {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+  }
+
+  .hamburger-icon {
+    background: url('./assets/shared/icon-hamburger.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 `;
 
 export const StyledNavbar = styled.nav`
@@ -38,17 +48,16 @@ export const StyledNavbar = styled.nav`
   @media screen and (min-width: ${minimalDesktopWidth}px) {
     padding: 0 100px 0 60px;
   }
-`;
 
-export const StyledHamburger = styled(HamburgerIcon)`
-  cursor: pointer;
-`;
-
-export const StyledCloseIcon = styled(CloseIcon)`
-  cursor: pointer;
-  right: 0;
-  position: absolute;
-  margin-top: ${(props) => props.headerheight / 1.5}px;
+  .close-icon {
+    background: url('./assets/shared/icon-close.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    right: 0;
+    top: -40px;
+    position: absolute;
+    margin-top: ${(props) => props.headerheight / 1.5}px;
+  }
 `;
 
 export const StyledLink = styled(Link)`
