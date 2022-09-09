@@ -2,11 +2,13 @@ import { NavbarContainer, StyledNavbar, StyledLink } from './Navbar.styles';
 import useWindowDimensions from '../../helpers/useWindowDimension';
 import { minimalTabletWidth } from '../../helpers/styleData';
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const Navbar = ({ headerheight }) => {
   const screenWidth = useWindowDimensions().width;
   const [showMobileNavbar, setShowMobileNavbar] = useState(false);
   const toggleMobileNavbar = () => setShowMobileNavbar(!showMobileNavbar);
+  const currentPage = useLocation().pathname;
 
   const links = [
     { path: '/', text: 'HOME' },
@@ -22,6 +24,11 @@ const Navbar = ({ headerheight }) => {
         key={link.path}
         onClick={() =>
           screenWidth < minimalTabletWidth ? toggleMobileNavbar() : null
+        }
+        style={
+          currentPage === link.path && screenWidth > minimalTabletWidth
+            ? { borderBottomColor: 'white' }
+            : null
         }
       >
         <span>0{index}</span> {link.text}

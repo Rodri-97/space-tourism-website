@@ -90,7 +90,7 @@ export const StyledLink = styled(Link)`
     font-size: 15px;
 
     &:hover {
-      border-bottom-color: white;
+      border-bottom-color: rgba(255, 255, 255, 0.4);
     }
   }
 
@@ -99,6 +99,7 @@ export const StyledLink = styled(Link)`
       display: block;
       font-weight: bold;
       margin-right: 10px;
+      color: white;
     }
   }
 `;
