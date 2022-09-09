@@ -3,19 +3,13 @@ import useWindowDimensions from '../../helpers/useWindowDimension';
 import { minimalTabletWidth } from '../../helpers/styleData';
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { links } from '../../helpers/links';
 
 const Navbar = ({ headerheight }) => {
   const screenWidth = useWindowDimensions().width;
   const [showMobileNavbar, setShowMobileNavbar] = useState(false);
   const toggleMobileNavbar = () => setShowMobileNavbar(!showMobileNavbar);
   const currentPage = useLocation().pathname;
-
-  const links = [
-    { path: '/', text: 'HOME' },
-    { path: '/destination', text: 'DESTINATION' },
-    { path: '/crew', text: 'CREW' },
-    { path: '/technology', text: 'TECHNOLOGY' },
-  ];
 
   const linkComponents = links.map((link, index) => {
     return (

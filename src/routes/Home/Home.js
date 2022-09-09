@@ -1,6 +1,14 @@
 import { StyledHome, StyledText, StyledExplore } from './Home.styles';
+import { Link } from 'react-router-dom';
+import { links } from '../../helpers/links';
 
 const Home = () => {
+  const allPathsExceptHome = links
+    .map((link) => link.path)
+    .filter((path) => path !== '');
+  const randomIndex = Math.floor(Math.random() * allPathsExceptHome.length);
+  const randomPath = allPathsExceptHome[randomIndex];
+
   return (
     <StyledHome>
       <StyledText>
@@ -16,7 +24,9 @@ const Home = () => {
         </div>
       </StyledText>
       <StyledExplore>
-        <button className='explore-btn'>EXPLORE</button>
+        <Link to={randomPath}>
+          <button className='explore-btn'>EXPLORE</button>
+        </Link>
       </StyledExplore>
     </StyledHome>
   );
