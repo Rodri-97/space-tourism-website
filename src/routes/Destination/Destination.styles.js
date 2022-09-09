@@ -86,8 +86,6 @@ export const InfoContainer = styled.article`
   .stats {
     padding: ${infoPadding}px 0;
     display: flex;
-    flex-direction: column;
-    gap: ${infoPadding}px;
 
     .stat-container {
       display: flex;
@@ -103,10 +101,20 @@ export const InfoContainer = styled.article`
     .destinations-list {
       justify-content: center;
     }
+
+    .stats {
+      flex-direction: column;
+      gap: ${infoPadding}px;
+    }
   }
 
   @media screen and (min-width: ${minimalDesktopWidth}px) {
     padding-left: 30px;
     padding-top: 70px;
+
+    .stats {
+      flex-direction: row;
+      gap: 50px;
+    }
   }
 `;
