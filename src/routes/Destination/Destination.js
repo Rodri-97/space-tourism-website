@@ -14,11 +14,16 @@ const Destination = () => {
   const destinationsList = data.destinations.map((destination) => {
     return (
       <li
-        className='destination'
+        className='destination-element'
         onClick={() => setSelectedDestination(destination)}
         key={destination.name}
+        style={
+          selectedDestination === destination
+            ? { color: 'white', borderBottomColor: 'white' }
+            : null
+        }
       >
-        {destination.name}
+        {destination.name.toUpperCase()}
       </li>
     );
   });
@@ -26,31 +31,40 @@ const Destination = () => {
   return (
     <StyledDestination>
       <ImageContainer className='image-container'>
-        <h4 className='title'>
+        <h4 className='page-title'>
           <span>01</span> PICK YOUR DESTINATION
         </h4>
 
         <img
           src={`${selectedDestination.images.png}`}
           alt={selectedDestination.name}
+          className='destination-image'
         />
       </ImageContainer>
       <InfoContainer className='info-container'>
         <ul className='destinations-list'>{destinationsList}</ul>
 
         <section className='main-info'>
-          <h1 className='selected-destination'>{selectedDestination.name}</h1>
+          <h1 className='selected-destination'>
+            {selectedDestination.name.toUpperCase()}
+          </h1>
           <p className='description'>{selectedDestination.description}</p>
         </section>
 
+        <hr className='hr' />
+
         <section className='stats'>
-          <div className='average-distance'>
-            <span>AVG DISTANCE</span>
-            <span>{selectedDestination.distance}</span>
+          <div className='stat-container'>
+            <span className='stat-name'>AVG DISTANCE</span>
+            <span className='stat'>
+              {selectedDestination.distance.toUpperCase()}
+            </span>
           </div>
-          <div className='estimated-travel-time'>
-            <span>EST TRAVEL TIME</span>
-            <span>{selectedDestination.travel}</span>
+          <div className='stat-container'>
+            <span className='stat-name'>EST TRAVEL TIME</span>
+            <span className='stat'>
+              {selectedDestination.travel.toUpperCase()}
+            </span>
           </div>
         </section>
       </InfoContainer>

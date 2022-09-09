@@ -17,9 +17,6 @@ export const StyledHome = styled.main`
 `;
 
 export const StyledText = styled.section`
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 20px;
-
   .titles-container {
     display: flex;
     flex-direction: column;
