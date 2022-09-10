@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { minimalDesktopWidth } from './helpers/styleData';
+import { minimalDesktopWidth, minimalTabletWidth } from './helpers/styleData';
 
 const iconMargin = 20;
 
@@ -10,7 +10,6 @@ export const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
         font-family: 'Bellefair', serif;
         color: rgba(255, 255, 255, 0.7);
-        font-size: 15px;
     }
 
     html, body {
@@ -33,6 +32,18 @@ export const GlobalStyles = createGlobalStyle`
         span {
             color: rgba(255, 255, 255, 0.5);
             font-weight: bold;
+        }
+    }
+
+    @media screen and (max-width: ${minimalTabletWidth}px) {
+        * {
+            font-size: 15px;
+        }
+    }
+
+    @media screen and (min-width: ${minimalTabletWidth}px) {
+        * {
+            font-size: 20px;
         }
     }
 

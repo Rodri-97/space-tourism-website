@@ -38,7 +38,7 @@ const Crew = () => {
           <h3 className='role'>{selectedPerson.role.toUpperCase()}</h3>
           <h2 className='name'>{selectedPerson.name.toUpperCase()}</h2>
         </div>
-        <p>{selectedPerson.bio}</p>
+        <p className='bio'>{selectedPerson.bio}</p>
       </InfoContainer>
     </StyledCrew>
   );

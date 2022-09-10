@@ -4,14 +4,38 @@ import { minimalTabletWidth } from '../../helpers/styleData';
 const infoGap = 30;
 
 export const StyledCrew = styled.main`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
   .person-img {
     width: 250px;
     height: 300px;
     margin-top: 30px;
+  }
+
+  @media screen and (max-width: ${minimalTabletWidth}px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media screen and (min-width: ${minimalTabletWidth}px) {
+    display: grid;
+    justify-items: center;
+    grid-template-areas: 'title' 'info' 'image';
+    margin-top: 50px;
+
+    .page-title {
+      grid-area: title;
+      margin-bottom: 30px;
+    }
+
+    .person-img {
+      grid-area: image;
+      width: 350px;
+      height: 400px;
+    }
+
+    .info-container {
+      grid-area: info;
+    }
   }
 `;
 
@@ -56,5 +80,26 @@ export const InfoContainer = styled.article`
     align-items: center;
     gap: ${infoGap}px;
     padding: ${infoGap}px 30px;
+  }
+
+  @media screen and (min-width: ${minimalTabletWidth}px) {
+    display: grid;
+    justify-items: center;
+    grid-template-areas: 'info' 'bio' 'bullets';
+    gap: 10px;
+
+    .main-info {
+      grid-area: info;
+    }
+
+    .bio {
+      grid-area: bio;
+      font-size: 20px;
+      padding: 0 100px;
+    }
+
+    .bullets {
+      grid-area: bullets;
+    }
   }
 `;
