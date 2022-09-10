@@ -66,7 +66,7 @@ export const StyledLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 3px solid transparent;
+  border-bottom: 3px solid transparent;
 
   span {
     display: none;
