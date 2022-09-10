@@ -45,6 +45,11 @@ export const GlobalStyles = createGlobalStyle`
         * {
             font-size: 20px;
         }
+
+        .page-title {
+            position: absolute;
+            left: 30px;
+        }
     }
 
     @media screen and (min-width: ${minimalDesktopWidth}px) {

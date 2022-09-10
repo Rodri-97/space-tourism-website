@@ -87,6 +87,7 @@ export const InfoContainer = styled.article`
     justify-items: center;
     grid-template-areas: 'info' 'bio' 'bullets';
     gap: 10px;
+    margin-top: 50px;
 
     .main-info {
       grid-area: info;

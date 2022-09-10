@@ -34,6 +34,7 @@ export const ImageContainer = styled.article`
   width: 300px;
 
   .destination-image {
+    margin-top: 40px;
     padding: 30px;
   }
 
