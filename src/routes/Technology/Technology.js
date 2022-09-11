@@ -12,6 +12,12 @@ const Technology = () => {
       <li
         key={technology.name}
         onClick={() => setCurrentTechnology(technology)}
+        className='slider'
+        style={
+          currentTechnology === technology
+            ? { backgroundColor: 'white', color: 'rgb(0, 0, 50)' }
+            : null
+        }
       >
         {idx + 1}
       </li>
@@ -21,20 +27,26 @@ const Technology = () => {
   return (
     <StyledTechnology>
       <h4 className='page-title'>
-        <span>02</span> MEET YOUR CREW
+        <span>03</span> SPACE LAUNCH 101
       </h4>
 
       <StyledContent>
-        <img
-          src={currentTechnology.images.landscape}
-          alt={currentTechnology.name}
-        />
-        <ul>{sliders}</ul>
+        <article className='img-container'>
+          <img
+            src={currentTechnology.images.landscape}
+            alt={currentTechnology.name}
+            className='technology-img'
+          />
+        </article>
+
+        <ul className='sliders'>{sliders}</ul>
 
         <section className='text-content'>
-          <h3>THE TERMINOLOGY</h3>
-          <h2>{currentTechnology.name}</h2>
-          <p>{currentTechnology.description}</p>
+          <h3 className='terminology'>THE TERMINOLOGY</h3>
+          <h2 className='technology-name'>
+            {currentTechnology.name.toUpperCase()}
+          </h2>
+          <p className='description'>{currentTechnology.description}</p>
         </section>
       </StyledContent>
     </StyledTechnology>
