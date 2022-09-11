@@ -35,7 +35,7 @@ const Technology = () => {
       </h4>
 
       <StyledContent>
-        <article className='img-container'>
+        <section className='img-container'>
           <img
             src={
               screenWidth < minimalDesktopWidth
@@ -45,7 +45,7 @@ const Technology = () => {
             alt={currentTechnology.name}
             className='technology-img'
           />
-        </article>
+        </section>
 
         <ul className='sliders'>{sliders}</ul>
 
