@@ -5,11 +5,11 @@ import data from '../../data.json';
 const Crew = () => {
   const [selectedPerson, setSelectedPerson] = useState(data.crew[0]);
 
-  const allBullets = data.crew.map((person, idx) => {
+  const allBullets = data.crew.map((person) => {
     return (
       <li
         className='bullet'
-        onClick={() => setSelectedPerson(data.crew[idx])}
+        onClick={() => setSelectedPerson(person)}
         key={person.name}
         style={
           selectedPerson.name === person.name
