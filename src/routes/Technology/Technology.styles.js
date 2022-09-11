@@ -46,7 +46,6 @@ export const StyledContent = styled.article`
   .text-content {
     display: flex;
     flex-direction: column;
-    text-align: center;
 
     .terminology {
       color: rgba(255, 255, 255, 0.5);
@@ -75,16 +74,10 @@ export const StyledContent = styled.article`
 
   @media screen and (min-width: ${minimalTabletWidth}px) {
     display: grid;
-    grid-template-areas: 'text' 'sliders' 'image';
 
     .text-content {
       grid-area: text;
       margin-top: 70px;
-
-      .description {
-        padding-left: 100px;
-        padding-right: 100px;
-      }
     }
 
     .sliders {
@@ -96,7 +89,22 @@ export const StyledContent = styled.article`
     }
   }
 
+  @media screen and (min-width: ${minimalTabletWidth}px) and (max-width: ${minimalDesktopWidth}px) {
+    grid-template-areas: 'text' 'sliders' 'image';
+
+    .text-content {
+      .description {
+        padding-left: 100px;
+        padding-right: 100px;
+      }
+    }
+  }
+
   @media screen and (max-width: ${minimalDesktopWidth}px) {
+    .text-content {
+      text-align: center;
+    }
+
     .sliders {
       flex-direction: row;
       justify-content: center;
@@ -104,8 +112,24 @@ export const StyledContent = styled.article`
   }
 
   @media screen and (min-width: ${minimalDesktopWidth}px) {
+    grid-template-areas: 'sliders text image';
+    padding-top: 70px;
+
     .sliders {
       flex-direction: column;
+      justify-content: center;
+    }
+
+    .text-content {
+      padding-left: 50px;
+
+      .technology-name {
+        font-size: 40px;
+      }
+
+      .description {
+        padding-right: 100px;
+      }
     }
   }
 `;

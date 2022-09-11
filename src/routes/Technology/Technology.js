@@ -1,11 +1,15 @@
 import { StyledTechnology, StyledContent } from './Technology.styles';
 import data from '../../data.json';
 import { useState } from 'react';
+import useWindowDimensions from '../../helpers/useWindowDimension';
+import { minimalDesktopWidth } from '../../helpers/styleData';
 
 const Technology = () => {
   const [currentTechnology, setCurrentTechnology] = useState(
     data.technology[0]
   );
+
+  const screenWidth = useWindowDimensions().width;
 
   const sliders = data.technology.map((technology, idx) => {
     return (
@@ -33,7 +37,11 @@ const Technology = () => {
       <StyledContent>
         <article className='img-container'>
           <img
-            src={currentTechnology.images.landscape}
+            src={
+              screenWidth < minimalDesktopWidth
+                ? currentTechnology.images.landscape
+                : currentTechnology.images.portrait
+            }
             alt={currentTechnology.name}
             className='technology-img'
           />
