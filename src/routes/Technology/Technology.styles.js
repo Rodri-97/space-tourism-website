@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-import { minimalDesktopWidth } from '../../helpers/styleData';
+import {
+  minimalTabletWidth,
+  minimalDesktopWidth,
+} from '../../helpers/styleData';
 
 export const StyledTechnology = styled.main`
   .page-title {
@@ -56,7 +59,40 @@ export const StyledContent = styled.article`
     }
 
     .description {
-      padding: 20px 50px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+
+  @media screen and (max-width: ${minimalTabletWidth}px) {
+    .text-content {
+      .description {
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+    }
+  }
+
+  @media screen and (min-width: ${minimalTabletWidth}px) {
+    display: grid;
+    grid-template-areas: 'text' 'sliders' 'image';
+
+    .text-content {
+      grid-area: text;
+      margin-top: 70px;
+
+      .description {
+        padding-left: 100px;
+        padding-right: 100px;
+      }
+    }
+
+    .sliders {
+      grid-area: sliders;
+    }
+
+    .img-container {
+      grid-area: image;
     }
   }
 
